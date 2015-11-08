@@ -3,8 +3,14 @@
     <section>
         <h1>Social</h1>
         <ul>
+        {% if FEED_ALL_RSS %}
+            <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate">RSS</a></li>
+        {% endif %}
         {% if FEED_RSS %}
             <li><a href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate">RSS</a></li>
+        {% endif %}
+        {% if FEED_ALL_ATOM %}
+            <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate">Atom</a></li>
         {% endif %}
         {% if FEED_ATOM %}
             <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate">Atom</a></li>
