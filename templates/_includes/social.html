@@ -3,6 +3,7 @@
     <section>
         <h1>Social</h1>
         <ul>
+        {% if DISPLAY_FEEDS_ON_SOCIAL|default(true) %}
         {% if FEED_ALL_RSS %}
             <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate">RSS</a></li>
         {% endif %}
@@ -14,6 +15,7 @@
         {% endif %}
         {% if FEED_ATOM %}
             <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate">Atom</a></li>
+        {% endif %}
         {% endif %}
         {% for name, link in SOCIAL %}
             <li><a href="{{ link }}" target="_blank">{{ name }}</a></li>
